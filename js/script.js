@@ -3,10 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 //quotes array of objects with keys such as quote,source,tag,citation, and year.
 const quotes = [
   {
@@ -25,7 +21,8 @@ const quotes = [
     quote: 'Believe you can and you are halfway there',
     source: 'Theodore Roesevelt',
     citation: 'Roosevelt spoke these words at his alma mater, Harvard',
-    year: 'June 28th, 1905'
+    year: 'June 28th, 1905',
+    tag: '#motivational'
   },
   {
     quote: 'A man is not finished when he is defeated; he is finished when he quits',
@@ -84,8 +81,9 @@ function printQuote () {
       message += `<span class='year'>${randomQuote.year}</span>`;
     }
     if (randomQuote.tag) {
-      message += `<span class='tag'>${randomQuote.tag}</span></p>`
+      message += `<span class='tag'>${randomQuote.tag}</span>`
     }
+    message += `</p>`
 
     document.getElementById('quote-box').innerHTML = message; 
     document.querySelector('body').style.backgroundColor = randomColor;
